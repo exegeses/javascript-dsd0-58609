@@ -16,7 +16,13 @@ function verValor()
     uAnio = seleccionado.substring( 0, 4 );
     uMes = seleccionado.substring( 5, 7 )-1;
     uDia = seleccionado.substring( 8, 10 );
-    let intervalo = setInterval( countdown, 1000 );
+
+    let actual = new Date();
+    let usuario = new Date( uAnio, uMes, uDia );
+    if( actual.getTime() < usuario.getTime()   ){
+       let intervalo = setInterval( countdown, 1000 );
+    }
+    txtDias.innerText = 'Seleccione una fecha futura';
 }
 
 //declaramos función de control
